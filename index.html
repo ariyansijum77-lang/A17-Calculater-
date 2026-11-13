@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <title>iPhone Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="app">
+
+  <header class="topbar">
+    <button class="top-btn" id="historyBtn" aria-label="History">
+      <svg viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="18"/>
+        <path d="M24 12v12H14"/>
+      </svg>
+    </button>
+
+    <button class="top-btn" id="modeBtn" aria-label="Calculator">
+      <svg viewBox="0 0 48 48">
+        <rect x="11" y="5" width="26" height="38" rx="5"/>
+        <rect x="16" y="10" width="16" height="8" rx="1"/>
+        <path d="M17 25h.1 M24 25h.1 M31 25h.1 M17 33h.1 M24 33h.1 M31 33h.1"/>
+      </svg>
+    </button>
+  </header>
+
+  <section class="calculator">
+
+    <div class="display">
+      <div id="expression" class="expression"></div>
+      <output id="display">0</output>
+    </div>
+
+    <div class="keys" id="keys">
+
+      <button class="key utility" data-action="delete">⌫</button>
+      <button class="key utility" data-action="clear">AC</button>
+      <button class="key utility" data-value="%">%</button>
+      <button class="key operator" data-value="÷">÷</button>
+
+      <button class="key number" data-value="7">7</button>
+      <button class="key number" data-value="8">8</button>
+      <button class="key number" data-value="9">9</button>
+      <button class="key operator" data-value="×">×</button>
+
+      <button class="key number" data-value="4">4</button>
+      <button class="key number" data-value="5">5</button>
+      <button class="key number" data-value="6">6</button>
+      <button class="key operator" data-value="−">−</button>
+
+      <button class="key number" data-value="1">1</button>
+      <button class="key number" data-value="2">2</button>
+      <button class="key number" data-value="3">3</button>
+      <button class="key operator" data-value="+">+</button>
+
+      <button class="key number" data-action="sign">+/−</button>
+      <button class="key number" data-value="0">0</button>
+      <button class="key number" data-value=".">.</button>
+      <button class="key operator" data-action="equals">=</button>
+
+    </div>
+
+  </section>
+
+</main>
+
+<div class="backdrop" id="backdrop"></div>
+
+<aside class="history-panel" id="historyPanel">
+  <div class="history-header">
+    <div>
+      <small>CALCULATOR</small>
+      <h2>History</h2>
+    </div>
+    <button id="closeHistory" class="close-btn">×</button>
+  </div>
+
+  <div id="historyItems" class="history-items"></div>
+
+  <button id="clearHistory" class="clear-history">
+    Clear History
+  </button>
+</aside>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
